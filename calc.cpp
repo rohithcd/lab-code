@@ -5,39 +5,39 @@ using namespace std;
 int main()
 {
 
-	double num1, num2, result;
-	int value;
+	double n,m,res;
+	int ch;
 
 	cout << "Select one of the operations" << endl;
 	cout << "1. Addition \t\t 2. Subtraction \t\t 3. Multiplication \t\t 4. Division" << endl;
-	cin >> value;
+	cin >> ch;
 
 	cout << "Enter the two numbers" << endl;
 	cout << "num1: ";
-	cin >> num1;
+	cin >> n;
 	cout << "num2: ";
-	cin >> num2;
+	cin >> m;
 
-	switch(value)
+	switch(ch)
 	{
 		case 1:
-			result = num1 + num2;
-			cout << "Result "<< result << endl;
+			res=n+m;
+			cout << "Result "<< res << endl;
 		  	break;
 
 		case 2:
-			result = num1 - num2;
-			cout << "Result "<< result << endl;
+			res=n-m;
+			cout << "Result "<< res << endl;
 		  	break;
 
 		case 3:
-			result = num1 * num2;
-			cout << "Result "<< result << endl;
+			res=n*m;
+			cout << "Result "<< res << endl;
 		  	break;
 
 		case 4:
-			result = num1 / num2;
-			cout << "Result "<< result << endl;
+			res=n/m;
+			cout << "Result "<< res << endl;
 		  	break;
 
 		default:
