@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include <math.h>
+
 using namespace std;
 
 int main()
@@ -44,6 +46,8 @@ int main()
 			cout << "Error!! input" << endl;
 	}
 	  
+	// This is a unused code. Remove when neccesary
+	cout<<"Absolute value of 10.23 is "<<abs(10.23);
 	 
 	system("pause");
 	return 0;
