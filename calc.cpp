@@ -1,54 +1,78 @@
+/*
+1. Write class which contains an integer array and a static function to find
+the average of that array and other necessary member functions. Create
+THREE objects. Read the values into the array using one object, and find
+the average. Let the second object modifies the value by multiplying each
+element by a certain multiplier. Repeat the process of finding the average
+using first object.Using the third object arrange the numbers in ascending
+order and print,
+*/
+
 #include <iostream>
-#include <cstdlib>
-#include <math.h>
-
 using namespace std;
+class avg{
+private:
+    static int a[30];
+public:
+    void get_data(int n);
+    static void aver(int n);
+    void mod(int n);
+    void sorting(int n);
 
-int main()
-{
+};
+int avg::a[30];
+void avg::get_data(int n){
+    int i;
+  cout<< "\nEnter the elements\n";
+    for(i=0;i<n;i++){
+        cin>> a[i];
+    }
+}
 
-	double n,m,res;
-	int ch;
+void avg::aver(int n){
+   int i=0;
+    float av,sum=0;
+    for(i=0;i<n;i++)
+        sum+=a[i];
 
-	cout << "Select one of the operations" << endl;
-	cout << "1. Addition \t\t 2. Subtraction \t\t 3. Multiplication \t\t 4. Division" << endl;
-	cin >> ch;
+     av=sum/n;
+    cout<< "\nThe Average of the Array is \n" << av <<endl;
+   }
 
-	cout << "Enter the two numbers" << endl;
-	cout << "num1: ";
-	cin >> n;
-	cout << "num2: ";
-	cin >> m;
+void avg::mod(int n){
+ int inp,i;
+    cout<<"\nEnter the multiplier to modify the Average\n";
+    cin>> inp;
+    for(i=0;i<n;i++)
+    a[i]=a[i]*inp;
+}
 
-	switch(ch)
-	{
-		case 1:
-			res=n+m;
-			cout << "Result "<< res << endl;
-		  	break;
+void avg::sorting(int n){
+    
+    int i,j,t;
+for(i=0; i<n-1; i++)
+		for(j=0; j<(n-i)-1; j++)
+		if(a[j]>a[j+1])
+		{
+			t=a[j];
+			a[j]=a[j+1];
+			a[j+1]=t;
+			}
 
-		case 2:
-			res=n-m;
-			cout << "Result "<< res << endl;
-		  	break;
+			cout << "Sorted array is " << endl;
+			for(i=0; i<n; i++)
+			cout << a[i] << endl;
+}
 
-		case 3:
-			res=n*m;
-			cout << "Result "<< res << endl;
-		  	break;
-
-		case 4:
-			res=n/m;
-			cout << "Result "<< res << endl;
-		  	break;
-
-		default:
-			cout << "Error!! input" << endl;
-	}
-	  
-	// This is a unused code. Remove when neccesary
-	cout<<"Absolute value of 10.23 is "<<abs(10.23);
-	 
-	system("pause");
-	return 0;
+int main(){
+avg o1,o2,o3;
+int size;
+cout<< "\nEnter the total numbers of elements\n";
+    cin>>size;
+    o1.get_data(size);
+    o1.aver(size);
+    o2.mod(size);
+    o3.sorting(size);
+    o1.aver(size);
+    return 0;
 }
